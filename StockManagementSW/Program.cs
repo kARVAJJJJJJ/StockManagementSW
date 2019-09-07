@@ -18,5 +18,13 @@ namespace StockManagementSW
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+        // New function
+        static void GitTest()
+        {
+            // Do magic here later
+            // Kavin please remove this
+        }
+
     }
 }
