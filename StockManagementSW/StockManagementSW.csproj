@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Stock.cs" />
+    <Compile Include="Classes\Storage.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,13 +83,21 @@
     <Compile Include="Migrations\202002021553209_CreateUser.designer.cs">
       <DependentUpon>202002021553209_CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002091630538_StockStorageProductAdded.cs" />
+    <Compile Include="Migrations\202002091630538_StockStorageProductAdded.designer.cs">
+      <DependentUpon>202002091630538_StockStorageProductAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockDbContext.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Classes\User.cs" />
     <EmbeddedResource Include="Migrations\202002021553209_CreateUser.resx">
       <DependentUpon>202002021553209_CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002091630538_StockStorageProductAdded.resx">
+      <DependentUpon>202002091630538_StockStorageProductAdded.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
