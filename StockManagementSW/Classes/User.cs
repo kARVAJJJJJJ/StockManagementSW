@@ -24,13 +24,13 @@ namespace StockManagementSW
             get => username;
             set
             {
-                if (value.Length < 5)
+                if (value.Length > 3)
                 {
                     username = value;
                 }
                 else
                 {
-                    throw new ArgumentException("felh hossz");
+                    throw new ArgumentException("felhasználónév hossz");
                 }
             } 
         }
@@ -61,11 +61,6 @@ namespace StockManagementSW
             Type = type;
         }
 
-        static string HashThePassword (string PWtohash)
-        {
-            SHA256CryptoServiceProvider p = new SHA256CryptoServiceProvider();
-            byte[] binaryHashedPassword = p.ComputeHash(Encoding.UTF8.GetBytes(PWtohash));
-            return BitConverter.ToString(binaryHashedPassword).Replace("-", "");
-        }
+        
     }
 }
