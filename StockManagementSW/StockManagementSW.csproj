@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Stock.cs" />
+    <Compile Include="StockUtility.cs" />
     <Compile Include="Classes\Storage.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -84,6 +85,12 @@
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202002021553209_CreateUser.cs" />
     <Compile Include="Migrations\202002021553209_CreateUser.designer.cs">
@@ -107,6 +114,9 @@
     <Compile Include="Classes\User.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002021553209_CreateUser.resx">
       <DependentUpon>202002021553209_CreateUser.cs</DependentUpon>

@@ -8,8 +8,7 @@ using System.Security.Cryptography;
 namespace StockManagementSW
 {
     enum UserType {BASIC, NORMAL, ADMIN }
-        
-
+    
     class User
     {
         private int id;
@@ -32,7 +31,7 @@ namespace StockManagementSW
                 {
                     throw new ArgumentException("felhasználónév hossz");
                 }
-            } 
+            }
         }
 
         public string HashedPassword
@@ -52,15 +51,26 @@ namespace StockManagementSW
         }
 
         public UserType Type { get => type; set => type = value; }
-        
-        public User(int id, string username, string hashedpassword, UserType type)
+
+        public User()
         {
-            Id = id;
+
+        }
+
+        public User(string username, string hashedpassword, UserType type)
+        {
             Username = username;
             HashedPassword = hashedpassword;
             Type = type;
         }
 
-        
+        public User(int id, string username, string hashedpassword, UserType type)
+        {
+            Id = id;
+            Username = username;
+            HashedPassword = hashedpassword;
+            Type = type; 
+        }
+                        
     }
 }

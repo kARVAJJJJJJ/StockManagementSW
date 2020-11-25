@@ -29,7 +29,7 @@ namespace StockManagementSW
             {
                 if (textBox1.Text != "" && textBox2.Text != "")
                 {
-                    User registered = new User(0, SHA256Hash(textBox1.Text), SHA256Hash(textBox2.Text), (UserType)comboBox1.SelectedIndex);
+                    User registered = new User(StockUtility.SHA256Hash(textBox1.Text), StockUtility.SHA256Hash(textBox2.Text), (UserType)comboBox1.SelectedIndex);
                     StockDbContext db = new StockDbContext();
                     db.Users.Add(registered);
                     db.SaveChanges();
@@ -49,13 +49,14 @@ namespace StockManagementSW
                 DialogResult = DialogResult.None;
             }
         }
-
-        internal static string SHA256Hash(string mit)
+        /*
+        public static string SHA256Hash(string mit)
         {
             string addOn = "Ptxc:Ja~6Fj\"f!s)dfC]AmRT"; // a \ utáni " a karaktersor része(24) :)
             SHA256CryptoServiceProvider csp = new SHA256CryptoServiceProvider();
             byte[] titkositott = csp.ComputeHash(Encoding.UTF8.GetBytes(mit + addOn));
             return BitConverter.ToString(titkositott).Replace("-", "");
         }
+        */
     }
 }
