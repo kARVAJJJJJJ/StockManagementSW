@@ -23,24 +23,32 @@ namespace StockManagementSW
         {
             StockDbContext db = new StockDbContext();
             string toCheck = StockUtility.SHA256Hash(textBox1.Text);
-            var userQuery = db.Users.Where(u => u.Username == toCheck);
+            var userQuery = db.Users.Where(u => u.HashedUsername == toCheck);
             
             try
             {
-                User user = userQuery.First<User>();
-                /*
+                 User user = userQuery.First<User>();
+                
                 foreach (var u in userQuery)
                 {
-                    theloginpw = u.HashedPassword;
+                    string theloginpw = u.HashedPassword;
                 }
-                */
+                
                 if (user.HashedPassword == StockUtility.SHA256Hash(textBox2.Text))
                 {
-                    MainForm mf = new MainForm(user.Username);
+                    /*
+                    MainForm mf = new MainForm(user);
                     mf.Show();
-                    this.Hide();
+                    */
+                    this.Close();
+                                   
                 }
-
+                else
+                {
+                    MessageBox.Show("A felhasználónév vagy jelszó nem megfelelő!","Hiba", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    DialogResult = DialogResult.None;
+                }
+                
             }
             catch (Exception ex)
             {

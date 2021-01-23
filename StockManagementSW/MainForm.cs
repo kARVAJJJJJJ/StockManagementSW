@@ -12,20 +12,30 @@ namespace StockManagementSW
 {
     public partial class MainForm : Form
     {
+        /*
         public MainForm()
         {
             InitializeComponent();
-            /*
+        }
+        */
+                
+        public MainForm()
+        {
             LoginForm lf = new LoginForm();
-            this.Hide();
             lf.Show();
-            */
+            lf.BringToFront();
+            lf.Activate();
+            if (lf.DialogResult == DialogResult.OK)
+            {
+                InitializeComponent();
+                //label1.Text = user.ToString();
+            }
+            
         }
 
-        public MainForm(string hashedusername)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            label1.Text = hashedusername;
+            
         }
     }
 }

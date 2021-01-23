@@ -72,6 +72,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Stock.cs" />
+    <Compile Include="Migrations\202011281324454_UserClassUpdated.cs" />
+    <Compile Include="Migrations\202011281324454_UserClassUpdated.designer.cs">
+      <DependentUpon>202011281324454_UserClassUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011281802425_UserClassUpdatedusernameremoved.cs" />
+    <Compile Include="Migrations\202011281802425_UserClassUpdatedusernameremoved.designer.cs">
+      <DependentUpon>202011281802425_UserClassUpdatedusernameremoved.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockUtility.cs" />
     <Compile Include="Classes\Storage.cs" />
     <Compile Include="Form1.cs">
@@ -123,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002091630538_StockStorageProductAdded.resx">
       <DependentUpon>202002091630538_StockStorageProductAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011281324454_UserClassUpdated.resx">
+      <DependentUpon>202011281324454_UserClassUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011281802425_UserClassUpdatedusernameremoved.resx">
+      <DependentUpon>202011281802425_UserClassUpdatedusernameremoved.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
