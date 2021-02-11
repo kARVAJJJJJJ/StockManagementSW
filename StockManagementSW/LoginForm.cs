@@ -16,7 +16,7 @@ namespace StockManagementSW
         public LoginForm()
         {
             InitializeComponent();
-                       
+            AcceptButton = button1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,33 +27,36 @@ namespace StockManagementSW
             
             try
             {
-                 User user = userQuery.First<User>();
-                
-                foreach (var u in userQuery)
+                if (textBox1.Text != "" && textBox2.Text != "")
                 {
-                    string theloginpw = u.HashedPassword;
-                }
-                
-                if (user.HashedPassword == StockUtility.SHA256Hash(textBox2.Text))
-                {
-                    /*
-                    MainForm mf = new MainForm(user);
-                    mf.Show();
-                    */
-                    this.Close();
-                                   
+                    User user = userQuery.First<User>();
+
+                    foreach (var u in userQuery)
+                    {
+                        string theloginpw = u.HashedPassword;
+                    }
+
+                    if (user.HashedPassword == StockUtility.SHA256Hash(textBox2.Text))
+                    {
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("A felhasználónév vagy jelszó nem megfelelő!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        DialogResult = DialogResult.None;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("A felhasználónév vagy jelszó nem megfelelő!","Hiba", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    DialogResult = DialogResult.None;
-                }
-                
+                    MessageBox.Show("Nincs kivel belépni!");
+                } 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                throw;
+                DialogResult = DialogResult.None;
+                throw;                
             }
 
             /*MessageBox.Show(user.ToString());

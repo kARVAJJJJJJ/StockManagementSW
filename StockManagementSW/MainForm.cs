@@ -23,12 +23,12 @@ namespace StockManagementSW
         {
             LoginForm lf = new LoginForm();
             lf.Show();
-            lf.BringToFront();
-            lf.Activate();
+            //lf.BringToFront();
+            //lf.Activate();
             if (lf.DialogResult == DialogResult.OK)
             {
                 InitializeComponent();
-                //label1.Text = user.ToString();
+                MessageBox.Show("gratulálok");
             }
             
         }
